@@ -3,7 +3,7 @@ prometheus::usershell: '/usr/bin/nologin'
 prometheus::extra_options: ~
 prometheus::download_url: ~
 prometheus::bin_dir: '/usr/local/bin'
-prometheus::version: '2.20.1'
+prometheus::version: '2.30.3'
 prometheus::install_method: 'url'
 prometheus::manage_prometheus_server: false
 prometheus::extract_command: ~
@@ -249,7 +249,7 @@ prometheus::blackbox_exporter::config_file: '/etc/blackbox-exporter.yaml'
 prometheus::blackbox_exporter::version: '0.17.0'
 prometheus::postgres_exporter::data_source_uri: 'host=/var/run/postgresql/ sslmode=disable'
 prometheus::postgres_exporter::download_extension: 'tar.gz'
-prometheus::postgres_exporter::download_url_base: 'https://github.com/wrouesnel/postgres_exporter/releases'
+prometheus::postgres_exporter::download_url_base: 'https://github.com/prometheus-community/postgres_exporter/releases'
 prometheus::postgres_exporter::extra_groups: []
 prometheus::postgres_exporter::group: 'postgres-exporter'
 prometheus::postgres_exporter::package_ensure: 'latest'

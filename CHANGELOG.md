@@ -4,7 +4,94 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
-## [v11.2.0](https://github.com/voxpupuli/puppet-prometheus/tree/v11.2.0) (2021-06-08)
+## [v12.3.0](https://github.com/voxpupuli/puppet-prometheus/tree/v12.3.0) (2021-11-17)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-prometheus/compare/v12.2.0...v12.3.0)
+
+**Implemented enhancements:**
+
+- Add a parameter to validate alertmanager config [\#593](https://github.com/voxpupuli/puppet-prometheus/pull/593) ([roidelapluie](https://github.com/roidelapluie))
+- Add sachet webhook receiver [\#590](https://github.com/voxpupuli/puppet-prometheus/pull/590) ([BDelacour](https://github.com/BDelacour))
+
+**Fixed bugs:**
+
+- fix download url for new asset url schema [\#591](https://github.com/voxpupuli/puppet-prometheus/pull/591) ([reini-1](https://github.com/reini-1))
+
+**Closed issues:**
+
+- Alertmanager configuration is not checked when installed from RPM [\#592](https://github.com/voxpupuli/puppet-prometheus/issues/592)
+- postgres\_exporter 0.10.0 cannot be downloaded [\#584](https://github.com/voxpupuli/puppet-prometheus/issues/584)
+- found multiple scrape configs with job name `x` [\#573](https://github.com/voxpupuli/puppet-prometheus/issues/573)
+
+**Merged pull requests:**
+
+- Update prometheus version from 2.20.1 to 2.30.3 [\#587](https://github.com/voxpupuli/puppet-prometheus/pull/587) ([saz](https://github.com/saz))
+- Run CI nightly [\#586](https://github.com/voxpupuli/puppet-prometheus/pull/586) ([bastelfreak](https://github.com/bastelfreak))
+
+## [v12.2.0](https://github.com/voxpupuli/puppet-prometheus/tree/v12.2.0) (2021-10-04)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-prometheus/compare/v12.1.1...v12.2.0)
+
+**Implemented enhancements:**
+
+- add nginx exporter [\#583](https://github.com/voxpupuli/puppet-prometheus/pull/583) ([kubicgruenfeld](https://github.com/kubicgruenfeld))
+
+**Fixed bugs:**
+
+- conflict with camptocamp-systemd latest  release 3.0.0 [\#560](https://github.com/voxpupuli/puppet-prometheus/issues/560)
+
+## [v12.1.1](https://github.com/voxpupuli/puppet-prometheus/tree/v12.1.1) (2021-08-26)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-prometheus/compare/v12.1.0...v12.1.1)
+
+**Merged pull requests:**
+
+- Allow up-to-date dependencies [\#579](https://github.com/voxpupuli/puppet-prometheus/pull/579) ([smortex](https://github.com/smortex))
+
+## [v12.1.0](https://github.com/voxpupuli/puppet-prometheus/tree/v12.1.0) (2021-08-24)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-prometheus/compare/v12.0.0...v12.1.0)
+
+**Implemented enhancements:**
+
+- $bin\_dir: Update datatype to Stdlib::Absolutepath [\#575](https://github.com/voxpupuli/puppet-prometheus/pull/575) ([bastelfreak](https://github.com/bastelfreak))
+- Arch Linux: Install bird\_exporter via packages [\#574](https://github.com/voxpupuli/puppet-prometheus/pull/574) ([bastelfreak](https://github.com/bastelfreak))
+
+**Fixed bugs:**
+
+- Arch Linux: Fix node\_exporter installation [\#576](https://github.com/voxpupuli/puppet-prometheus/pull/576) ([bastelfreak](https://github.com/bastelfreak))
+
+## [v12.0.0](https://github.com/voxpupuli/puppet-prometheus/tree/v12.0.0) (2021-07-27)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-prometheus/compare/v11.2.0...v12.0.0)
+
+**Breaking changes:**
+
+- Overhaul and fix ipmi\_exporter class [\#562](https://github.com/voxpupuli/puppet-prometheus/pull/562) ([treydock](https://github.com/treydock))
+
+**Implemented enhancements:**
+
+- Support SSL exporter [\#567](https://github.com/voxpupuli/puppet-prometheus/pull/567) ([treydock](https://github.com/treydock))
+- Add support for SSH exporter [\#566](https://github.com/voxpupuli/puppet-prometheus/pull/566) ([treydock](https://github.com/treydock))
+- Support mute\_time\_intervals for Alertmanager [\#563](https://github.com/voxpupuli/puppet-prometheus/pull/563) ([treydock](https://github.com/treydock))
+- Support Stdlib::Filesource as type for download urls [\#561](https://github.com/voxpupuli/puppet-prometheus/pull/561) ([gburton1](https://github.com/gburton1))
+
+**Fixed bugs:**
+
+- Fix wrong undef datatypes [\#570](https://github.com/voxpupuli/puppet-prometheus/pull/570) ([bastelfreak](https://github.com/bastelfreak))
+
+**Closed issues:**
+
+- Alertmanger service will not start \(public IP\) [\#558](https://github.com/voxpupuli/puppet-prometheus/issues/558)
+
+**Merged pull requests:**
+
+- switch from camptocamp/systemd to voxpupuli/systemd [\#569](https://github.com/voxpupuli/puppet-prometheus/pull/569) ([bastelfreak](https://github.com/bastelfreak))
+- Fix IPMI exporter sudo config, add dependency on saz/sudo [\#565](https://github.com/voxpupuli/puppet-prometheus/pull/565) ([treydock](https://github.com/treydock))
+- Misc fixes to make IPMI exporter more consistent [\#564](https://github.com/voxpupuli/puppet-prometheus/pull/564) ([treydock](https://github.com/treydock))
+- Allow default scrape\_configs to be optional [\#542](https://github.com/voxpupuli/puppet-prometheus/pull/542) ([treydock](https://github.com/treydock))
+
+## [v11.2.0](https://github.com/voxpupuli/puppet-prometheus/tree/v11.2.0) (2021-06-09)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-prometheus/compare/v11.1.0...v11.2.0)
 

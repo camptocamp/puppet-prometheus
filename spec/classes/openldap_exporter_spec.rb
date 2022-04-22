@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe 'prometheus::openldap_exporter' do
@@ -18,7 +20,7 @@ describe 'prometheus::openldap_exporter' do
 
         describe 'with all defaults' do
           it { is_expected.to compile.with_all_deps }
-          it { is_expected.to contain_file('/usr/local/bin/openldap_exporter').with('target' => "/opt/openldap_exporter-2.1.linux-amd64/openldap_exporter") }
+          it { is_expected.to contain_file('/usr/local/bin/openldap_exporter').with('target' => '/opt/openldap_exporter-2.1.linux-amd64/openldap_exporter') }
           it { is_expected.to contain_prometheus__daemon('openldap_exporter') }
           it { is_expected.to contain_user('openldap-exporter') }
           it { is_expected.to contain_group('openldap-exporter') }
@@ -28,4 +30,3 @@ describe 'prometheus::openldap_exporter' do
     end
   end
 end
-

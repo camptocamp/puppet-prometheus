@@ -1,16 +1,20 @@
+# frozen_string_literal: true
+
 require 'spec_helper_acceptance'
 
 describe 'prometheus postfix exporter' do
   describe 'install postfix' do
     before do
-      install_module_from_forge('camptocamp/postfix', '>= 1.8.0 < 2.0.0')
+      install_module_from_forge('puppet/postfix', '>= 1.8.0 < 3.0.0')
     end
+
     it do
       pp = 'include postfix'
       apply_manifest(pp, catch_failures: true)
       apply_manifest(pp, catch_changes: true)
     end
   end
+
   context 'default version' do
     it 'postfix_exporter works idempotently with no errors' do
       pp = 'include prometheus::postfix_exporter'

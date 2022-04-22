@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe 'prometheus::ipmi_exporter' do
@@ -43,6 +45,7 @@ describe 'prometheus::ipmi_exporter' do
         it { is_expected.to compile.with_all_deps }
         it { is_expected.to contain_archive('/tmp/ipmi_exporter-1.3.1.tar.gz') }
         it { is_expected.to contain_prometheus__daemon('ipmi_exporter').with(options: '--config.file=/etc/ipmi_exporter.yaml  --freeipmi.path=/usr/local/bin') }
+
         if facts[:os]['name'] == 'Archlinux'
           it { is_expected.to contain_file('/usr/bin/ipmi_exporter') }
           it { is_expected.not_to contain_file('/usr/local/bin/ipmi_exporter') }
@@ -52,11 +55,11 @@ describe 'prometheus::ipmi_exporter' do
         end
         it do
           verify_contents(catalogue, '/etc/ipmi_exporter.yaml', [
-            'modules:',
-            '  default:',
-            '    collectors:',
-            '    - bmc',
-          ])
+                            'modules:',
+                            '  default:',
+                            '    collectors:',
+                            '    - bmc',
+                          ])
         end
       end
 
@@ -74,6 +77,7 @@ describe 'prometheus::ipmi_exporter' do
         it { is_expected.to compile.with_all_deps }
         it { is_expected.to contain_archive('/tmp/ipmi_exporter-1.0.0.tar.gz') }
         it { is_expected.to contain_file('/opt/ipmi_exporter-1.0.0.linux-amd64/ipmi_exporter') }
+
         describe 'install correct binary' do
           it { is_expected.to contain_file('/usr/local/bin/ipmi_exporter').with('target' => '/opt/ipmi_exporter-1.0.0.linux-amd64/ipmi_exporter') }
         end
